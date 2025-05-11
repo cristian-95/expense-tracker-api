@@ -1,0 +1,23 @@
+api:
+  security:
+    token:
+      secret: ${SECRET}
+server:
+  forward-headers-strategy: framework
+spring:
+  application:
+    name: ExpenseTrackerAPI
+  datasource:
+    url: jdbc:postgresql://localhost:5432/expense_tracker_db
+    username: postgres
+    password: ${DB_PASSWORD}
+  jackson:
+    time-zone: America/Sao_Paulo
+    date-format: yyyy-MM-dd HH:mm:ss.SSS
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
